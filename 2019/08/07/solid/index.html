@@ -7,7 +7,7 @@
 
 
 
-<title>一些漫画收藏 | 杂食动物</title>
+<title>固体物理(胡安 章维益) | 杂食动物</title>
 
 
 
@@ -103,11 +103,73 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">一些漫画收藏</h1>
+            <h1 class="post-title">固体物理(胡安 章维益)</h1>
             
                 <div class="post-meta">
                     
@@ -116,14 +178,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 7, 2019&nbsp;&nbsp;17:40:37</a>
+                        Date: <a href="#">August 7, 2019&nbsp;&nbsp;22:45:10</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/趣味/">趣味</a>
+                                <a href="/categories/Phys/">Phys</a>
                             
                         </span>
                     
@@ -132,16 +194,7 @@
         </header>
 
         <div class="post-content">
-            <p>1.スラムダンク</p>
-<p>  週刊少年ジャンプ 1990年42号　スラムダンク新連載。</p>
-<p><img src="https://img3.doubanio.com/view/note/l/public/p60379534.webp" alt><br><img src="https://img1.doubanio.com/view/note/l/public/p60379917.webp" alt><br><img src="https://img3.doubanio.com/view/note/l/public/p60380540.webp" alt><br><img src="https://img3.doubanio.com/view/note/l/public/p60380772.webp" alt></p>
-<p>  週刊少年ジャンプ　1996年27号　スラムダンク最終回。</p>
-<p><img src="https://img1.doubanio.com/view/note/l/public/p60556727.webp" alt><br><img src="https://img1.doubanio.com/view/note/l/public/p60556649.webp" alt><br><img src="https://img3.doubanio.com/view/note/l/public/p60556670.webp" alt><br><img src="https://img3.doubanio.com/view/note/l/public/p60556686.webp" alt></p>
-<p>2.デスノート</p>
-<p>  週刊少年ジャンプ　2004年1号　デスノート新連載。</p>
-<p><img src="https://img3.doubanio.com/view/note/l/public/p60381090.webp" alt><br><img src="https://img3.doubanio.com/view/note/l/public/p60382623.webp" alt><br><img src="https://img3.doubanio.com/view/note/l/public/p60383516.webp" alt></p>
-<p>  週刊少年ジャンプ　2006年24号　デスノート最終回。有点遗憾的是表纸并不是死亡笔记。</p>
-<p><img src="https://img3.doubanio.com/view/note/l/public/p60385234.webp" alt><br><img src="https://img3.doubanio.com/view/note/l/public/p60388323.webp" alt><br><img src="https://img3.doubanio.com/view/note/l/public/p60389502.webp" alt></p>
+            <h2 id="第一章-晶体的结构及其对称性"><a href="#第一章-晶体的结构及其对称性" class="headerlink" title="第一章 晶体的结构及其对称性"></a>第一章 晶体的结构及其对称性</h2><h3 id="1-1晶格及其平移对称性"><a href="#1-1晶格及其平移对称性" class="headerlink" title="1.1晶格及其平移对称性"></a>1.1晶格及其平移对称性</h3><p>主要就是记住各种概念。</p>
 
         </div>
 
@@ -175,7 +228,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/漫画/"># 漫画</a>
+                        <a href="/tags/笔记/"># 笔记</a>
                     
                         
                 </span>
@@ -188,10 +241,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/08/07/solid/">固体物理(胡安 章维益)</a>
             
-            
-            <a class="next" rel="next" href="/2019/08/07/20190807/">2019/8/7 晴 心情舒爽</a>
+            <a class="next" rel="next" href="/2019/08/07/manga/">一些漫画收藏</a>
             
         </section>
 

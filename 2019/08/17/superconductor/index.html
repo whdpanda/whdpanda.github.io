@@ -103,6 +103,68 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
@@ -132,7 +194,28 @@
         </header>
 
         <div class="post-content">
-            
+            <p>这是一个粗略版的讲义，很多地方不细，物理图景不清晰，需要后续补足。</p>
+<h2 id="第一章-場の量子論概説"><a href="#第一章-場の量子論概説" class="headerlink" title="第一章 場の量子論概説"></a>第一章 場の量子論概説</h2><p>这一部分需要量子统计和高量(量子场论)的知识，目前理解还停留在浅层，等熟悉后有必要重看理解。</p>
+<h3 id="1-1N体量子力学"><a href="#1-1N体量子力学" class="headerlink" title="1.1N体量子力学"></a>1.1N体量子力学</h3><p>粒子分为Bose子和Fermi子。N体系量子力学用坐标表象表示不仅麻烦而且远离本质，不得不给粒子标号，这时候需要引进<strong>粒子数表象</strong>来表示。</p>
+<h3 id="1-2Bose子"><a href="#1-2Bose子" class="headerlink" title="1.2Bose子"></a>1.2Bose子</h3><p>利用生成湮灭算符，成功将Bose子用粒子数表象表示，要注意Bose中这两种算符满足的<strong>对易关系</strong>。另外，通过这两种算符再将波函数本身算符化，这便是<strong>第二量子化</strong>。这里面要注意一点作用于算符的算符和作用于波函数的算符可以理解为直积空间，这样就可以计算很多复杂的对易关系(方便换位置)，而且还要注意有很多公式并不适用于直积空间([AB,C]=A[B,C]+[A,C]B等)</p>
+<h3 id="1-3Fermi子"><a href="#1-3Fermi子" class="headerlink" title="1.3Fermi子"></a>1.3Fermi子</h3><p>Feimi子的生成湮灭算符满足的是<strong>反对易关系</strong>，其他的推导和Bose子一致。</p>
+<h3 id="1-4海森堡绘景和薛定谔绘景"><a href="#1-4海森堡绘景和薛定谔绘景" class="headerlink" title="1.4海森堡绘景和薛定谔绘景"></a>1.4海森堡绘景和薛定谔绘景</h3><p>场算符依存于时间就是海森堡绘景，前面推导属于此。改用场算符的薛定谔绘景，可以得出N体系在坐标表象下的薛定谔方程。</p>
+<h3 id="1-5粒子间的相互作用"><a href="#1-5粒子间的相互作用" class="headerlink" title="1.5粒子间的相互作用"></a>1.5粒子间的相互作用</h3><p>将粒子间的相互作用引入，与前面的推导顺序一致，但是多了相互作用，会更加复杂。</p>
+<h3 id="1-6古典场的量子化"><a href="#1-6古典场的量子化" class="headerlink" title="1.6古典场的量子化"></a>1.6古典场的量子化</h3><p>电磁场合格子振动(声子)，可以作为波色子第二量子化。将声子满足的波动方程进行改造，把时间的二阶微分项处理为一阶项，利用谐振子类似的方法取算符，将波函数量子化。</p>
+<h3 id="1-8Fermi气体"><a href="#1-8Fermi气体" class="headerlink" title="1.8Fermi气体"></a>1.8Fermi气体</h3><p>为Fermi情形加上自旋部分，相应的对易关系会多出自旋部分。讨论基态得到相应的费米能，费米动量(要注意态密度和自旋)。激发态可用<strong>元激发</strong>以及<strong>准粒子</strong>来描述(具体理解得从<strong>量子统计</strong>看起)。</p>
+<h2 id="第二章-超导现象"><a href="#第二章-超导现象" class="headerlink" title="第二章 超导现象"></a>第二章 超导现象</h2><p>讲义的这一部分物理图景感觉不是很清晰，可能需要相关书籍和科普文章的进一步理解。Meissner效果的具体理解，超流动是什么，磁化曲线与临界磁场由来，Josephson效果的理解。</p>
+<h3 id="2-1超导现象"><a href="#2-1超导现象" class="headerlink" title="2.1超导现象"></a>2.1超导现象</h3><ol>
+<li>超伝導転移は２次相転移、電気抵抗０。</li>
+<li>完全反磁性と<strong>Meissner効果</strong>。超导状态下，超导体内部磁场无法侵入，完全反磁性，B=0。引入现象论<strong>London方程式</strong>可以得到<strong>London侵入长</strong>这个告诉我们磁场只能进入一点，剩下部分B=0。</li>
+<li>磁束量子化。</li>
+<li>第一种和第二种超导体<strong>磁化曲线</strong>不同，第二种超导体磁场是不均匀侵入，于是可以得到两个<strong>临界磁场</strong>，而第一种只有一个<strong>临界磁场</strong>。</li>
+</ol>
+<h3 id="2-2超流"><a href="#2-2超流" class="headerlink" title="2.2超流"></a>2.2超流</h3><p>超流与超导有很多相似点，故先定性研究超流。超流针对凝聚的Bose子，为了准确研究我们使用对凝聚体的宏观量子状态，而非微观的一粒子的量子状态。</p>
+<p>考虑部分系与环境之间的粒子交换，即粒子流(算符作用时我们要注意研究的是基态)。当部分系与粒子系无相互作用时，基态是简并的(即在粒子数波动下，能量不变，各种粒子数都对应基态)，考虑相互作用就将简并打开。利用<strong>简并微扰</strong>的理论，我们可以得到位相表象下的波函数，与粒子数表象互为<strong>Fourier变换</strong>？</p>
+<p>部分系与环境有位相差，能量就会有微扰项，完全平衡状态没有相位差，为了减少相位差发生粒子移动，波函数会随时间变化，而这种移动就是<strong>超流动</strong>，因为在这种移动下凝聚体依旧是基态波函数(没有客服阻力能量不变？)，这种凝聚体的流动会有<strong>Josephson效果</strong>。反观非凝聚体则会产生抵抗。</p>
+<p>更进一步，部分系内波函数不仅随时间变化也会随位置变化，这样在部分系内产生粒子密度流，这时有粒子密度流的状态会比没有粒子密度流的状态能量更高，但这依旧是有流动情况下的基态，且是超流动(流动也保持基态？)。实际上，本应产生流动阻力，却产生了超流动，本质都应用Josephson效果解释。</p>
+<p>超流动涡系也是量子化的，即速度场的闭曲线积分是量子化的。</p>
+
         </div>
 
         
